@@ -6,6 +6,8 @@ import "@maptiler/geocoding-control/style.css";
 import "@maptiler/sdk/dist/maptiler-sdk.css";
 import "./map.css";
 
+//maptilersdk.config.apiKey = "YOUR_API_KEY_HERE";
+
 maptilersdk.config.apiKey = "xFfMGP6nxQo76qog5wnc";
 
 //Used Gemini to help figure out useState and return coordinates from click
@@ -28,7 +30,6 @@ export default function Map() {
 
     map.current.on("click", (e) => {
       setPoint(e.lngLat);
-      console.log(point);
     });
 
     setMapController(createMapLibreGlMapController(map.current, maptilersdk));
