@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import "./info.css";
+import Shuffle from "./shuffle";
 
 export default function InfoPage() {
+  const [selectedRestaurant, setSelectedRestaurant] = useState(null);
+  const handleChoice = (restaurant) => {
+    setSelectedRestaurant(restaurant);
+  };
+
   let restaurantName = "Restaurant Name";
   let restaurantAddress = "123 Address";
   let star = 0;
