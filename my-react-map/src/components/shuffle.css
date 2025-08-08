@@ -1,0 +1,40 @@
+.shuffle {
+  transition: 0.15s;
+  display: flex;
+  position: absolute;
+  z-index: 2;
+  bottom: 7vh;
+  background-color: rgb(150, 150, 245);
+  color: white;
+  width: 75vw;
+  height: 5vh;
+  justify-self: center;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3vh;
+  flex-direction: column-reverse;
+  font-size: 28px;
+  border: none;
+  box-shadow: 0 2px 5px #33335926;
+}
+.shuffle:hover {
+  background-color: rgb(125, 125, 220);
+  font-size: 30px;
+  height: 5.5vh;
+  transition: 0.2s;
+  bottom: 6.75vh;
+  width: 76vw;
+}
+@media (orientation: landscape) {
+  .shuffle {
+    right: 3vw;
+    bottom: 6vh;
+    width: 23vw;
+  }
+  .shuffle:hover {
+    bottom: 5.75vh;
+    right: 2.75vw;
+    width: 23.5vw;
+  }
+}

@@ -1,0 +1,150 @@
+.info {
+  position: absolute;
+  z-index: 2;
+  bottom: 19vh;
+  left: 45.5vw;
+  height: 7vh;
+  width: 7vh;
+  box-shadow: 0 2px 5px #33335926;
+  border-radius: 4vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 30px;
+  color: rgb(121, 130, 139);
+  transition: 0.25s;
+  background-color: rgb(150, 150, 245);
+}
+#window {
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.25s;
+}
+#restName {
+  width: 100%;
+  height: 25%;
+  display: flex;
+  border-top-left-radius: 4vh;
+  border-top-right-radius: 4vh;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px #33335926;
+}
+#restAlign {
+  font-size: 40px;
+  display: flex;
+  width: 85%;
+  height: 50%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#categories {
+  width: 100%;
+  height: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px #33335926;
+}
+#iconAlign {
+  background-color: aqua;
+  height: 65%;
+}
+
+#reviews {
+  width: 100%;
+  height: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px #33335926;
+}
+#revAlign {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 85%;
+  height: 80%;
+  font-size: 30px;
+  gap: 5%;
+}
+
+#address {
+  width: 100%;
+  height: 25%;
+  display: flex;
+  border-bottom-left-radius: 4vh;
+  border-bottom-right-radius: 4vh;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px #33335926;
+}
+#addAlign {
+  display: flex;
+  width: 85%;
+  height: 50%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+@media (orientation: portrait) {
+  .info:hover {
+    bottom: 16vh;
+    left: 2vw;
+    height: 65vh;
+    width: 96vw;
+    box-shadow: 0 2px 5px #33335926;
+    border-radius: 4vh;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 30px;
+    color: rgb(121, 130, 139);
+    transition: 0.35s;
+  }
+  #window:hover {
+    opacity: 1;
+    transition: 0.4s;
+  }
+}
+@media (orientation: landscape) {
+  .info {
+    display: flex;
+    width: 25vw;
+    height: 85vh;
+    position: absolute;
+    top: 11vh;
+    left: auto;
+    right: 2vw;
+    display: block;
+    background-color: white;
+  }
+  #window {
+    opacity: 1;
+    transition: 0s;
+  }
+  #restName {
+    height: 30%;
+  }
+  #restAlign {
+    align-items: flex-end;
+  }
+  #categories {
+    height: 20%;
+  }
+  #reviews {
+    height: 20%;
+  }
+  #address {
+    height: 30%;
+  }
+  #addAlign {
+    align-items: flex-start;
+  }
+}

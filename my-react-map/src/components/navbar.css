@@ -1,0 +1,24 @@
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  height: 7vh;
+  padding: 0px;
+  background-color: rgb(150, 150, 245);
+  color: white;
+  text-align: center;
+  border-bottom-right-radius: 4vh;
+  border-bottom-left-radius: 4vh;
+  width: 96vw;
+  box-shadow: 0 2px 5px #33335926;
+}
+#title {
+  font-size: 28px;
+}
+@media (orientation: landscape) {
+  .heading {
+    width: 100vw;
+    border-radius: 0%;
+  }
+}
