@@ -2,12 +2,22 @@ import React, { useState, useEffect } from "react";
 import "./shuffle.css";
 import "./info.css";
 
-import { Map } from "@maptiler/sdk";
-
 function Shuffle() {
   const [localList, setLocalList] = useState([]);
   const coordinates = { lng: -86.16, lat: 39.77 };
   const radius = 0.075;
+
+  //info variables
+
+  const [restaurantName, setRestaurantName] = useState("Restaurant Name");
+  const [restaurantAddress, setRestaurantAddress] = useState("123 Address Way");
+  const [star, setStar] = useState(0);
+  const [restCat, setCat] = useState("Categories");
+  const [star1, setStar1] = useState({ color: "" });
+  const [star2, setStar2] = useState({ color: "" });
+  const [star3, setStar3] = useState({ color: "" });
+  const [star4, setStar4] = useState({ color: "" });
+  const [star5, setStar5] = useState({ color: "" });
 
   function getInfo() {
     fetch("indiana.json")
@@ -24,7 +34,6 @@ function Shuffle() {
           const hasCoordinates = item.latitude && item.longitude;
           // Ensure the item has valid latitude and longitude properties
           if (hasCoordinates && isRestaurant) {
-            // Calculate the absolute difference in longitude and latitude
             const lngDiff = Math.abs(item.longitude - coordinates.lng);
             const latDiff = Math.abs(item.latitude - coordinates.lat);
 
@@ -35,43 +44,48 @@ function Shuffle() {
         });
 
         setLocalList(filteredList);
+
+        //Seperating Shuffle and Info
+
         let randomNumber = Math.floor(Math.random() * filteredList.length);
         let choice = filteredList[randomNumber];
-        console.log(choice);
+        setRestaurantName(choice.name);
+
+        setCat(choice.categories);
+
+        setStar(choice.stars);
+        if (star > 0.5) {
+          setStar1({ color: "gold" });
+        } else {
+          setStar1({ color: "rgb(121, 130, 139)" });
+        }
+        if (star > 1.5) {
+          setStar2({ color: "gold" });
+        } else {
+          setStar2({ color: "rgb(121, 130, 139)" });
+        }
+        if (star > 2.5) {
+          setStar3({ color: "gold" });
+        } else {
+          setStar3({ color: "rgb(121, 130, 139)" });
+        }
+        if (star > 3.5) {
+          setStar4({ color: "gold" });
+        } else {
+          setStar4({ color: "rgb(121, 130, 139)" });
+        }
+        if (star > 4.5) {
+          setStar5({ color: "gold" });
+        } else {
+          setStar5({ color: "rgb(121, 130, 139)" });
+        }
+
+        setRestaurantAddress(
+          `${choice.address}, ${choice.city}, ${choice.state}`
+        );
       })
       .catch((error) => console.error("Problem Fetching Locations:", error));
   }
-  const [selectedRestaurant, setSelectedRestaurant] = useState(null);
-  const handleChoice = (restaurant) => {
-    setSelectedRestaurant(restaurant);
-  };
-
-  let restaurantName = "Restaurant Name";
-  let restaurantAddress = "123 Address";
-  let star = 0;
-  let star1 = { color: "" };
-  let star2 = { color: "" };
-  let star3 = { color: "" };
-  let star4 = { color: "" };
-  let star5 = { color: "" };
-  function setStarCount() {
-    if (star > 0.5) {
-      star1 = { color: "gold" };
-    }
-    if (star > 1.5) {
-      star2 = { color: "gold" };
-    }
-    if (star > 2.5) {
-      star3 = { color: "gold" };
-    }
-    if (star > 3.5) {
-      star4 = { color: "gold" };
-    }
-    if (star > 4.5) {
-      star5 = { color: "gold" };
-    }
-  }
-  setStarCount();
 
   return (
     <div>
@@ -80,7 +94,9 @@ function Shuffle() {
           <div className="tab" id="restName">
             <div>{restaurantName}</div>
           </div>
-          <div className="tab" id="categories"></div>
+          <div className="tab" id="categories">
+            {restCat}
+          </div>
           <div className="tab" id="reviews">
             <div id="revAlign">
               <span style={star1} id="star1">

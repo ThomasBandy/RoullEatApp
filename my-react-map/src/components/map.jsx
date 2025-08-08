@@ -6,9 +6,7 @@ import "@maptiler/geocoding-control/style.css";
 import "@maptiler/sdk/dist/maptiler-sdk.css";
 import "./map.css";
 
-//maptilersdk.config.apiKey = "YOUR_API_KEY_HERE";
-
-maptilersdk.config.apiKey = "xFfMGP6nxQo76qog5wnc";
+maptilersdk.config.apiKey = "YOUR_API_KEY_HERE";
 
 //Used Gemini to help figure out useState and return coordinates from click
 
@@ -16,7 +14,7 @@ export default function Map() {
   const mapContainer = useRef(null);
   const map = useRef(null);
   const [point, setPoint] = useState({ lng: -86.16, lat: 39.77 });
-  const zoom = 6.2;
+  const zoom = 7;
   const [mapController, setMapController] = useState();
 
   useEffect(() => {
