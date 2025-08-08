@@ -14,9 +14,9 @@ Some AI was used in creating this project, mostly for formatting and corrections
   > npm install react react-dom
 3. **API Key** Users must obtain an API key from <a href="maptiler.com">Maptiler</a> and apply it in *map.jsx*, replacing the text <ins>YOUR_API_KEY_HERE"</ins>
 4. Then in the terminal copy the text below
-> cd my-react-map
+  > cd my-react-map
 followed by **ENTER**
 Then copy
-> npm run dev
+  > npm run dev
 followed by **ENTER**
 **Click The Link** to the localhost server to open the web app
